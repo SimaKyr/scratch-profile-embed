@@ -5,7 +5,6 @@ var usernameLabel = document.getElementById("username");
 var country = document.getElementById("country");
 var bio = document.getElementById("bio");
 var statusPar = document.getElementById("status-paragraph");
-var viewProfile = document.getElementById("view-profile-link");
 var username = location.hash.substr(1, location.hash.length);
 
 var error = function(title, desc) {
@@ -33,7 +32,7 @@ window.onhashchange = function() {
 // Set the title, the shown username and make the link go to the enterd username
 usernameLabel.textContent = username;
 document.title = username;
-viewProfile.href = "https://scratch.mit.edu/users/" + username;
+
 
 // Do the request 
 var req = new XMLHttpRequest();
