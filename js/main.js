@@ -36,7 +36,7 @@ document.title = username;
 
 // Do the request 
 var req = new XMLHttpRequest();
-req.open("GET", 'https://api.scratch.mit.edu/users/' + username);
+req.open("GET", 'https://cors.io/?https://api.scratch.mit.edu/users/' + username);
 req.send();
 req.onreadystatechange = function() {
 
@@ -44,7 +44,7 @@ req.onreadystatechange = function() {
     var parsedresp = JSON.parse(req.responseText);
     country.textContent = parsedresp.profile.country;
     avatar.alt = username + "'s avatar";
-    avatar.src = "https://cdn2.scratch.mit.edu/get_image/user/" + parsedresp.id + "_90x90.png";
+    avatar.src = "https://cors.io/?https://cdn2.scratch.mit.edu/get_image/user/" + parsedresp.id + "_90x90.png";
     avatar.className = "";
     // Shows the "About me" if it's not empty
     if(parsedresp.profile.bio !== "") {
