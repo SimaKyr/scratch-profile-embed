@@ -40,11 +40,6 @@ req.open("GET", 'https://api.scratch.mit.edu/users/' + username);
 req.send();
 req.onreadystatechange = function() {
 
-  if (req.status == 404) {
-    error("User not found", "Make sure there isn't a typo.");
-  }
-
-  if (req.readyState === 4 && req.status === 200) {
     // Shows the country and avatar
     var parsedresp = JSON.parse(req.responseText);
     country.textContent = parsedresp.profile.country;
@@ -70,5 +65,5 @@ req.onreadystatechange = function() {
     } 
     // Hides the loader
     endLoading();
-  }};
+  };
   
