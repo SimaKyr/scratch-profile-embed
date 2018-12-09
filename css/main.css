@@ -26,6 +26,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: white;
+  overflow: none;
 }
 #bio,#status {
   white-space: pre-line;
